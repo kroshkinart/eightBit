@@ -9,10 +9,19 @@ use EightBitBundle\Exception\CurlErrorException;
 use EightBitBundle\Exception\JsonMalformedException;
 use EightBitBundle\Exception\ResponseErrorException;
 
+/**
+ * Class LocationController
+ * @author Kroshkin Artem <kroshkinphp@gmail.com>
+ * @package EightBitBundle\Controller
+ *
+ * Сервис для работы с расположениями объектов
+ */
 class LocationController extends Controller
 {
     /**
      * @Route("/")
+     *
+     * Главная страница для выбора запроса (с учётом CRUD)
      */
     public function indexAction()
     {
@@ -21,12 +30,15 @@ class LocationController extends Controller
 
     /**
      * @Route("/locations", name="_locations")
+     *
+     * Получение данных о расположении
      */
     public function locationAction()
     {
-        $locator = $this->get('locator');
+        $locator = $this->get('locator'); //вызов сервиса
         $res = $msg = false;
 
+        // пытаемся получить данные и ловим соотв-ие ошибки
         try {
             $res = $locator->getLocations();
         } catch (CurlInitException $e) {

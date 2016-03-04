@@ -4,9 +4,27 @@
 namespace MockBundle\Entity;
 
 
+/**
+ * Class Location
+ * @author Kroshkin Artem <kroshkinphp@gmail.com>
+ * @package MockBundle\Entity
+ *
+ * Расположение объекта
+ */
 class Location
 {
+    /**
+     * @var
+     *
+     * Название объекта
+     */
     public $name;
+
+    /**
+     * @var
+     *
+     * Координаты объекта
+     */
     public $coordinates;
 
     public function __construct($name, $lat, $long)
@@ -14,15 +32,5 @@ class Location
         $this->name = $name;
         $this->coordinates['lat'] = $lat;
         $this->coordinates['long'] = $long;
-    }
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    public function getCoordinates()
-    {
-        return $this->coordinates;
     }
 }
