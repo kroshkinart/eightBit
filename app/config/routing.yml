@@ -1,0 +1,8 @@
+eight_bit:
+    resource: "@EightBitBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
