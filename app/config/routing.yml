@@ -1,3 +1,8 @@
+mock:
+    resource: "@MockBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 eight_bit:
     resource: "@EightBitBundle/Controller/"
     type:     annotation

@@ -1,0 +1,14 @@
+{% if msg %}
+    <h1>Error</h1>
+    <h2>{{ msg }}</h2>
+{% else %}
+<h1>Locations list:</h1><span>Format: {name} ({latitude}, {longitude})</span>
+<ul>
+    {% for location in locations %}
+    <li>
+        {{ location.name }} ({{ location.coordinates.lat }}, {{ location.coordinates.long }})
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
